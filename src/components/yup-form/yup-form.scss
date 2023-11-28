@@ -1,0 +1,23 @@
+.shipping-form-container {
+    .shipping-form {
+        .form-field-container {
+            @apply w-2/3 mx-auto mt-3 h-20 max-w-xl;
+            .error-message {
+                @apply text-center mt-1;
+            }
+            .custom-select__control {
+                @apply border-solid border-2 border-gray-500 rounded-xl w-full text-base outline-none font-medium flex h-14 content-center;
+            }
+            input{
+                @apply border-solid border-2 rounded-xl w-full text-base outline-none font-medium block p-3 box-border h-14;
+            }  
+        }        
+    }
+    .button-container {
+        @apply w-2/3 mx-auto mt-3 max-w-xl;
+        button {
+            @apply text-lg border-none rounded-xl text-white text-center w-full font-bold block cursor-pointer p-3 box-border h-14;
+            background-color: #263986;
+        }
+    }
+}
