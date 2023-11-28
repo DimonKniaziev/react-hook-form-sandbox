@@ -9,6 +9,7 @@ export interface IShippingFields {
     name: string;
     email: string;
     adress: IAdress;
+    date: Date;
 }
   
 export interface IOption {

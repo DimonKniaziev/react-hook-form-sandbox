@@ -3,8 +3,10 @@ import { object, string, number, date, InferType, mixed } from 'yup';
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import ReactSelect from 'react-select';
+import DatePicker from "react-datepicker";
 import { IOption } from '../../interfaces';
 import './yup-form.scss';
+import 'react-datepicker/dist/react-datepicker.css'
 
 const options: IOption[] = [
     {value: 'germany', label: 'Germany'},
@@ -16,6 +18,7 @@ let fieldsSchema = object({
     name: string().required('Name is required').min(3, 'must be at least 3 characters long'),    
     email: string().email('Please, Enter Valid Email').required('Email is Required'),
     country: mixed().oneOf(['usa', 'england', 'germany']).required('Country is required'),
+    date: date().required('Date is required')
 });
 interface IFields extends InferType<typeof fieldsSchema>{};
 
@@ -75,6 +78,21 @@ const YUPForm: React.FC = () => {
                         {error && <div className='error-message'>{error.message}</div>}             
                     </div>
                 )}
+            />
+
+            <Controller
+            control={control}
+            name='date'
+            render={({field: {onChange, value}, fieldState: {error}}) => (
+                <div className='form-field-container'>
+                <DatePicker
+                    selected={value}
+                    onChange={onChange}
+                    dateFormat="Pp"
+                />
+                {error && <div className='error-message'>{error.message}</div>}             
+                </div>
+            )}
             />
 
             <div className='button-container'>

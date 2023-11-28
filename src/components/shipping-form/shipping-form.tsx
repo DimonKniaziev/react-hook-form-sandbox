@@ -2,7 +2,9 @@ import React from 'react';
 import './shipping-form.scss'
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import ReactSelect from 'react-select';
+import DatePicker from "react-datepicker";
 import { IOption, IShippingFields } from '../../interfaces';
+import 'react-datepicker/dist/react-datepicker.css'
 
 const options: IOption[] = [
   {value: 'germany', label: 'Germany'},
@@ -76,6 +78,23 @@ const ShippingForm: React.FC = () => {
                   {error && <div className='error-message'>{error.message}</div>}             
                 </div>
             )}
+        />
+        <Controller
+          control={control}
+          name='date'
+          rules={{
+            required: 'Date is required'
+          }}
+          render={({field: {onChange, value}, fieldState: {error}}) => (
+            <div className='form-field-container'>
+              <DatePicker
+                selected={value}
+                onChange={onChange}
+                dateFormat="Pp"
+              />
+              {error && <div className='error-message'>{error.message}</div>}             
+            </div>
+          )}
         />
 
         <div className='button-container'>

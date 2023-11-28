@@ -8,6 +8,9 @@
             .custom-select__control {
                 @apply border-solid border-2 border-gray-500 rounded-xl w-full text-base outline-none font-medium flex h-14 content-center;
             }
+            .react-datepicker-wrapper {
+                @apply w-full text-base outline-none font-medium flex h-14 content-center;
+            }
             input{
                 @apply border-solid border-2 rounded-xl w-full text-base outline-none font-medium block p-3 box-border h-14;
             }  
