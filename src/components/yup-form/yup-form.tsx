@@ -3,7 +3,7 @@ import { object, string, number, date, InferType, mixed } from 'yup';
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import ReactSelect from 'react-select';
-import DatePicker from "react-datepicker";
+import ReactDatePicker from 'react-datepicker';
 import { IOption } from '../../interfaces';
 import './yup-form.scss';
 import 'react-datepicker/dist/react-datepicker.css'
@@ -85,7 +85,7 @@ const YUPForm: React.FC = () => {
             name='date'
             render={({field: {onChange, value}, fieldState: {error}}) => (
                 <div className='form-field-container'>
-                <DatePicker
+                <ReactDatePicker
                     selected={value}
                     onChange={onChange}
                     dateFormat="Pp"
