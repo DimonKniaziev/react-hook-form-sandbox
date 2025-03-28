@@ -1,0 +1,38 @@
+.dynamic-form-container {
+    .dynamic-form {
+        .form-item-container {
+            @apply flex flex-col gap-2 mb-6;
+            .form-field-container {
+                @apply w-2/3 mx-auto max-w-xl;
+                .error-message {
+                    @apply text-center mt-1;
+                }
+                .custom-select__control {
+                    @apply border-solid border-2 border-gray-500 rounded-xl w-full text-base outline-none font-medium flex h-14 content-center;
+                }
+                .react-datepicker-wrapper {
+                    @apply w-full text-base outline-none font-medium flex h-14 content-center;
+                }
+                input{
+                    @apply border-solid border-2 rounded-xl w-full text-base outline-none font-medium block p-3 box-border h-14;
+                }
+                button {
+                    @apply text-lg border-none rounded-xl text-white text-center font-bold block cursor-pointer p-3 box-border bg-red-700 w-full;
+                }
+            }
+        }
+    }
+    .button-container {
+        @apply w-2/3 mx-auto mt-3 max-w-xl flex gap-4 justify-between;
+        .add-user-button {
+            @apply bg-[#263986];
+        }
+        .submit-button {
+            @apply bg-green-700;
+        }
+        button {
+            @apply text-lg border-none rounded-xl text-white text-center font-bold block cursor-pointer p-3 box-border h-14 w-full;
+        }
+
+    }
+}
