@@ -16,3 +16,14 @@ export interface IOption {
     value: string;
     label: string;
 }
+
+export interface IName {
+    firstName: string;
+    lastName: string;
+}
+
+export interface IAdress {
+    city: string;
+    street: string;
+    houseNumber: number;
+}

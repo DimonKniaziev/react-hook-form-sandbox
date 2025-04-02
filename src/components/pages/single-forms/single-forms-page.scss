@@ -1,0 +1,10 @@
+.single-forms-page {
+    @apply font-sans font-bold;
+    h1 {
+        @apply text-center;
+    }
+
+    .error-message {
+        @apply text-red-600;
+    }
+}
